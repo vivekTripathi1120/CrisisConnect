@@ -5,6 +5,7 @@ import com.crisisConnect.CrisisConnect.userService.dtos.OnboardingDTO;
 import com.crisisConnect.CrisisConnect.userService.dtos.RegistrationResponseDTO;
 import com.crisisConnect.CrisisConnect.userService.service.EmergencyServService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +18,12 @@ public class EmergencyServicesController {
 
     @PostMapping("/onboard")
     private ResponseEntity<RegistrationResponseDTO> onboardEmerServ(@RequestBody OnboardingDTO onboardingDTO){
-        return new ResponseEntity<>(emerServ.onboardEmerServ(onboardingDTO));
+        return new ResponseEntity<>(emerServ.onboardEmerServ(onboardingDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/emerServVerif")
-    private ResponseEntity<GeneralResponseDTO> emerServVerif(@RequestParam Long emerServId, @RequestParam Integer verStat,
+    private ResponseEntity<GeneralResponseDTO> emerServVerif(@RequestParam Long emerServId, @RequestParam Integer verType,
                                                              @RequestParam Long verifrId){
-        return new ResponseEntity<>(emerServ.emerServVerif(emerServId,verStat,verifrId));
+        return new ResponseEntity<>(emerServ.emerServVerif(emerServId,verType,verifrId),HttpStatus.OK);
     }
 }

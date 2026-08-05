@@ -1,10 +1,10 @@
 package com.crisisConnect.CrisisConnect.userService.entity;
 
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "administrators")
 public class Administrator {
 
     @Id
@@ -14,4 +14,5 @@ public class Administrator {
     private Integer level; // 1-> gov level country, 2 -> state, 3 -> city
     private Integer parentLevelId;
     private Boolean verified;
+    private Long userId;
 }

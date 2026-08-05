@@ -30,8 +30,9 @@ public class UserController {
 
     @PostMapping("/verifyPhoneNumber")
     private ResponseEntity<GeneralResponseDTO> verifyPhoneNumber(@RequestParam Long citId, @RequestParam Long otp,
-                                                                 @RequestParam Integer type){
-        return new ResponseEntity<>(citizenService.verifyPhoneNumber(citId,otp,type),HttpStatus.OK);
+                                                                 @RequestParam Long phoneNumber,
+                                                                 @RequestParam Integer type, @RequestParam  Integer userType){
+        return new ResponseEntity<>(citizenService.verifyPhoneNumber(citId,otp,type,userType,phoneNumber),HttpStatus.OK);
     }
 
     @PostMapping("/addEmergencyContact")
