@@ -10,10 +10,12 @@ import com.crisisConnect.CrisisConnect.masterService.repository.OtpHistoryReposi
 import com.crisisConnect.CrisisConnect.masterService.service.CommonUtilsService;
 import com.crisisConnect.CrisisConnect.masterService.utils.UserConstants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+@Service
 public class CommonUtilsServiceImpl implements CommonUtilsService {
 
     @Autowired
@@ -50,7 +52,7 @@ public class CommonUtilsServiceImpl implements CommonUtilsService {
         Citizen citizen = getCitizen(citId);
 
         OtpHistory otpHistory = otpHistoryRepository
-                .findByIdAndPhoneNumberAndPhoneTypeAndUserType(citId, phoneNumber, phoneType, userType);
+                .findByPhoneNumberAndPhoneTypeAndUserType(citId, phoneNumber, phoneType, userType);
 
         if(null == otpHistory || !citizen.getPhoneNumber().equals(otpHistory.getPhoneNumber()) ||
                 !otpHistory.getOtp().equals(otp) ){

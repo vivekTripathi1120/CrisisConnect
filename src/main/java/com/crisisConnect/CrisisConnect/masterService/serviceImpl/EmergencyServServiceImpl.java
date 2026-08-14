@@ -10,7 +10,9 @@ import com.crisisConnect.CrisisConnect.masterService.repository.AdministratorRep
 import com.crisisConnect.CrisisConnect.masterService.service.EmergencyServService;
 import com.crisisConnect.CrisisConnect.masterService.utils.UserConstants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmergencyServServiceImpl implements EmergencyServService {
 
     @Autowired

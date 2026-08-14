@@ -13,10 +13,12 @@ import com.crisisConnect.CrisisConnect.masterService.repository.OtpHistoryReposi
 import com.crisisConnect.CrisisConnect.masterService.service.CitizenService;
 import com.crisisConnect.CrisisConnect.masterService.utils.UserConstants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+@Service
 public class CitizenServiceImpl implements CitizenService {
 
     @Autowired
@@ -28,15 +30,13 @@ public class CitizenServiceImpl implements CitizenService {
     @Autowired
     OtpHistoryRepository otpHistoryRepository;
 
-    @Autowired
-    UserConstants userConstants;
 
     @Override
     public RegistrationResponseDTO onboardUser(OnboardingDTO onboardingDTO) throws CustomValidationException {
 
         Citizen citizen = new Citizen();
 
-        if(!userConstants.CitizenUniqIdLength.equals(onboardingDTO.getUniqId().toString().length())){
+        if(!UserConstants.CitizenUniqIdLength.equals(onboardingDTO.getUniqId().toString().length())){
             throw new CustomValidationException(ErrorCodes.CITIZEN_WRONG_UNIQUE_ID);
         }
         citizen.setCitizenName(onboardingDTO.getName());

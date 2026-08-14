@@ -13,7 +13,7 @@ public interface CitizenService {
 
     GeneralResponseDTO updateDetails(CitizenDTO citizenDTO);
 
-    GeneralResponseDTO verifyPhoneNumber(Long citId, Long otp, Integer type, Integer userType, Long phoneNumber);
+//    GeneralResponseDTO verifyPhoneNumber(Long citId, Long otp, Integer type, Integer userType, Long phoneNumber);
 
     GeneralResponseDTO addEmergencyContact(Long citId, Long emerConNum);
 }
