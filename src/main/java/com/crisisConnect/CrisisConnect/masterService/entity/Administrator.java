@@ -13,6 +13,7 @@ public class Administrator {
 
     private Integer level; // 1-> gov level country, 2 -> state, 3 -> city
     private Integer parentLevelId;
+    private String verifiedBy;
     private Boolean verified;
     private Long userId;
 }

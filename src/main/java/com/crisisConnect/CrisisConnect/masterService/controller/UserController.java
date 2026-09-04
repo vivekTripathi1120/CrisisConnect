@@ -28,12 +28,12 @@ public class UserController {
         return new ResponseEntity<>(citizenService.updateDetails(citizenDTO),HttpStatus.ACCEPTED);
     }
 
-    @PostMapping("/verifyPhoneNumber")
-    private ResponseEntity<GeneralResponseDTO> verifyPhoneNumber(@RequestParam Long citId, @RequestParam Long otp,
-                                                                 @RequestParam Long phoneNumber,
-                                                                 @RequestParam Integer type, @RequestParam  Integer userType){
-        return new ResponseEntity<>(citizenService.verifyPhoneNumber(citId,otp,type,userType,phoneNumber),HttpStatus.OK);
-    }
+//    @PostMapping("/verifyPhoneNumber")
+//    private ResponseEntity<GeneralResponseDTO> verifyPhoneNumber(@RequestParam Long citId, @RequestParam Long otp,
+//                                                                 @RequestParam Long phoneNumber,
+//                                                                 @RequestParam Integer type, @RequestParam  Integer userType){
+//        return new ResponseEntity<>(citizenService.verifyPhoneNumber(citId,otp,type,userType,phoneNumber),HttpStatus.OK);
+//    }
 
     @PostMapping("/addEmergencyContact")
     private ResponseEntity<GeneralResponseDTO> addEmergencyContact(@RequestParam Long citId, @RequestParam Long emerConNum){
