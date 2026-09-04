@@ -11,6 +11,8 @@ public final class UserConstants {
     public static final Long SHELTER_TYPE = 2L;
     public static final Long FIRE_STATION_TYPE = 3L;
     public static final Long POLICE_STATION_TYPE = 4L;
+    public static final String USER_CREATED_MSG = "User Created Successfully";
+    public static final Integer CITY_GEO_LVL = 3;
 
     private void AppConstants() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");

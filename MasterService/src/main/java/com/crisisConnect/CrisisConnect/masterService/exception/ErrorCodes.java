@@ -2,15 +2,13 @@ package com.crisisConnect.CrisisConnect.masterService.exception;
 
 public enum ErrorCodes {
 
-    CITIZEN_WRONG_UNIQUE_ID(5001L, "User already exists"),
-
-    INVALID_OTP(5002L, "Invalid OTP"),
-
-    USER_NOT_FOUND(5003L, "User not found"),
-
-    MOBILE_ALREADY_REGISTERED(5004L, "Mobile number already registered"),
-
-    EMAIL_ALREADY_REGISTERED(5005L, "Email already registered");
+    ERRORCODES_2001(2001L, "User already exists"),
+    ERRORCODES_2002(2002L, "Invalid OTP"),
+    ERRORCODES_2003(2003L, "User not found"),
+    ERRORCODES_2004(2004L, "Mobile number already registered"),
+    ERRORCODES_2005(2005L, "Email already registered"),
+    ERRORCODES_2006(2006L, "Geo Local Not FOUND")
+    ;
 
     private final Long errorCode;
     private final String errorMsg;

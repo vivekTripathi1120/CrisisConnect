@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -16,20 +17,25 @@ public class Citizen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long citizenId;
 
-    private String citizenName;
-    private Long aadharCardNumber;
-    private Long phoneNumber;
-    private Boolean phoneVerified;
-    private Long emergencyContactNumber;
-    private Boolean emergencyConNumVerified;
-    private String permanentAddress;
-    private String currentAddress;
-    private Integer familyMember;
-    private Long zipCode;
-    private Long cityId;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private String createdBy;
-    private String updatedBy;
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "userId",nullable = false)
+    private Users user;
 
+    @Column(name = "date_of_birth")
+    private LocalDate dateOfBirth;
+
+    @Column(name = "gender", length = 30)
+    private String gender;
+
+    @Column(name = "family_member_count")
+    private Integer familyMemberCount;
+
+    @Column(name = "deleted_flag")
+    private Boolean deletedFlag = false;
+
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 }

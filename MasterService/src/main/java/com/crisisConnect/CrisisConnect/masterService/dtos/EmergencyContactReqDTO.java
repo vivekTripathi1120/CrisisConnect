@@ -1,15 +1,17 @@
 package com.crisisConnect.CrisisConnect.masterService.dtos;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class OnboardingDTO {
+public class EmergencyContactReqDTO {
 
-    private String name;
+    private Long emergencyContId;
+    private String contactName;
+    private String relationShip;
     private String phoneNumber;
     private String email;
-    private Long emergencyContactNo;
-    private String password;
+    private Boolean isPrimary;
 }
