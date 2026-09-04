@@ -1,6 +1,6 @@
 package com.crisisConnect.CrisisConnect.masterService.service;
 
-import com.crisisConnect.CrisisConnect.exception.CustomValidationException;
+import com.crisisConnect.CrisisConnect.masterService.exception.CustomValidationException;
 import com.crisisConnect.CrisisConnect.masterService.dtos.CitizenDTO;
 import com.crisisConnect.CrisisConnect.masterService.dtos.GeneralResponseDTO;
 import com.crisisConnect.CrisisConnect.masterService.dtos.OnboardingDTO;

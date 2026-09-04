@@ -1,7 +1,7 @@
 package com.crisisConnect.CrisisConnect.masterService.serviceImpl;
 
-import com.crisisConnect.CrisisConnect.exception.CustomValidationException;
-import com.crisisConnect.CrisisConnect.exception.ErrorCodes;
+import com.crisisConnect.CrisisConnect.masterService.exception.CustomValidationException;
+import com.crisisConnect.CrisisConnect.masterService.exception.ErrorCodes;
 import com.crisisConnect.CrisisConnect.masterService.dtos.GeneralResponseDTO;
 import com.crisisConnect.CrisisConnect.masterService.entity.Citizen;
 import com.crisisConnect.CrisisConnect.masterService.entity.OtpHistory;
